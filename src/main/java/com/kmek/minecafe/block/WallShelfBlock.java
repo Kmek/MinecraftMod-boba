@@ -77,7 +77,7 @@ public class WallShelfBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new WallShelfBlockEntity(pos, state);
+        return new WallShelfBlockEntity(pos, state, this);
     }
 
     @Override

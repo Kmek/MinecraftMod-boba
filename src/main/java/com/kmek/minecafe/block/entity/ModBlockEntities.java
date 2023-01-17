@@ -28,9 +28,14 @@ public class ModBlockEntities {
                             ModBlocksInit.CAKE_STAND.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<WallShelfBlockEntity>> WALL_SHELF =
-            BLOCK_ENTITIES.register("wall_shelf", () ->
+            BLOCK_ENTITIES.register("wall_shelf_oak", () ->
                     BlockEntityType.Builder.of(WallShelfBlockEntity::new,
                             ModBlocksInit.OAK_WALL_SHELF.get()).build(null));
+
+//    public static final RegistryObject<BlockEntityType<WallShelfBlockEntity>> WALL_SHELF_BIRCH =
+//            BLOCK_ENTITIES.register("wall_shelf_birch", () ->
+//                    BlockEntityType.Builder.of(WallShelfBlockEntity::new,
+//                            ModBlocksInit.BIRCH_WALL_SHELF.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

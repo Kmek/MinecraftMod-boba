@@ -8,6 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -17,6 +18,7 @@ public class WallShelfMenu extends AbstractContainerMenu {
     public final WallShelfBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private final Block block;
 
     public WallShelfMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(WallShelfBlockEntity.dataFieldsCount));
@@ -26,6 +28,7 @@ public class WallShelfMenu extends AbstractContainerMenu {
         super(ModMenuTypes.WALL_SHELF_MENU.get(), id);
         checkContainerSize(inv, WallShelfBlockEntity.menuSlotCount);
         blockEntity = (WallShelfBlockEntity) entity;
+        this.block = blockEntity.getBlockForMenuComparison();
         level = inv.player.level;
         this.data = data;
 
@@ -100,7 +103,9 @@ public class WallShelfMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, ModBlocksInit.OAK_WALL_SHELF.get());
+                pPlayer, block);
+//        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
+//                pPlayer, ModBlocksInit.OAK_WALL_SHELF.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

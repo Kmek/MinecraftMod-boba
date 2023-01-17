@@ -1,6 +1,5 @@
 package com.kmek.minecafe.block.entity.renderer;
 
-import com.kmek.minecafe.block.DisplayCaseBlock;
 import com.kmek.minecafe.block.WallShelfBlock;
 import com.kmek.minecafe.block.entity.WallShelfBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,7 +15,6 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class WallShelfBlockEntityRenderer implements BlockEntityRenderer<WallShelfBlockEntity> {

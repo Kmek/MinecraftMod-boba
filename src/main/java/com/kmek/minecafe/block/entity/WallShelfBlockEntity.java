@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -30,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 public class WallShelfBlockEntity extends BlockEntity implements MenuProvider {
     public static final int menuSlotCount = 24;
     public static final int dataFieldsCount = 2;
+    private Block block = null;
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(menuSlotCount) {
         @Override
@@ -82,6 +84,15 @@ public class WallShelfBlockEntity extends BlockEntity implements MenuProvider {
                 return 0;
             }
         };
+    }
+
+    public WallShelfBlockEntity(BlockPos pPos, BlockState pBlockState, Block block) {
+        this(pPos, pBlockState);
+        this.block = block;
+    }
+
+    public Block getBlockForMenuComparison() {
+        return this.block;
     }
 
     @Override

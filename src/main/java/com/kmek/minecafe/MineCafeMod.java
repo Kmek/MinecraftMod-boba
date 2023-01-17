@@ -84,6 +84,7 @@ public class MineCafeMod {
                     output.accept(ModItemsInit.CAKE_STAND_ITEM.get());
                     output.accept(ModItemsInit.DISPLAY_CASE_CURVED_ITEM.get());
                     output.accept(ModItemsInit.OAK_WALL_SHELF_ITEM.get());
+                    output.accept(ModItemsInit.BIRCH_WALL_SHELF_ITEM.get());
                     output.accept(ModItemsInit.WAFFLE_IRON_ITEM.get());
                     output.accept(ModItemsInit.ESPRESSO_MACHINE_ITEM.get());
 
@@ -256,6 +257,7 @@ public class MineCafeMod {
             event.accept(ModItemsInit.CAKE_STAND_ITEM);
             event.accept(ModItemsInit.DISPLAY_CASE_CURVED_ITEM);
             event.accept(ModItemsInit.OAK_WALL_SHELF_ITEM);
+            event.accept(ModItemsInit.BIRCH_WALL_SHELF_ITEM);
             event.accept(ModItemsInit.WAFFLE_IRON_ITEM);
             event.accept(ModItemsInit.ESPRESSO_MACHINE_ITEM);
         }
